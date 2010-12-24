@@ -19,12 +19,21 @@ my $colors = {
     0  => '',
 };
 $content =~ s/ /&nbsp;/g;
-$content =~ s{\n}{<br />}g;
+$content =~ s{\n}{<br
+/>}g;
 
 $content =~ s{\e\[(\d+)m(.*?)(?=\e\[\d+m)}{
-    '<span style="' . $colors->{$1} . '">' . $2 . '</span>';
+    '<span style="' . $colors->{$1} . '">' . $2 . '</span>
+';
 }gsex;
 
 $content =~ s/\e\[\d+m//g;
 
-print '<html><head><title>Parse Tree</title></head><body style="padding: 0px; margin: 0px;"><pre style="background-color: #051005; font: monospace">' . $content . '</pre></body></html>';
+print '<html>
+    <head>
+        <title>Parse Tree</title>
+    </head>
+    <body style="padding: 0px; margin: 0px;">
+        <div style="background-color: #051005; font: monospace">' . $content . '</div>
+    </body>
+</html>';
