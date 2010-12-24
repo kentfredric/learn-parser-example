@@ -27,4 +27,4 @@ $content =~ s{\e\[(\d+)m(.*?)(?=\e\[\d+m)}{
 
 $content =~ s/\e\[\d+m//g;
 
-print '<pre style="background-color: #051005; font: monospace">' . $content . '</pre>';
+print '<html><head><title>Parse Tree</title></head><body style="padding: 0px; margin: 0px;"><pre style="background-color: #051005; font: monospace">' . $content . '</pre></body></html>';
